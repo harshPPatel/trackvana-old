@@ -7,6 +7,6 @@ export class DatabaseConstants {
     ? Number(process.env.DB_PORT)
     : 5432;
   public static DB_USERNAME: string = process.env.DB_USERNAME.toString();
-  public static DB_PASSWORD: string = process.env.DB_USERNAME.toString();
-  public static DB_NAME: string = process.env.DB_USERNAME.toString();
+  public static DB_PASSWORD: string = process.env.DB_PASSWORD.toString();
+  public static DB_NAME: string = process.env.DB_NAME.toString();
 }
