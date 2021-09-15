@@ -10,4 +10,13 @@
 
 - [ ] Add different middlewares (check ddd-forum for this)
 - [ ] admin can enable/disable the user
+
   - [ ] On enable, create random password and send email with proper instructions
+
+- [ ] Regex for Password:
+  - [ ] https://dev.to/petroskoulianos/3-password-regex-for-your-next-project-53fn
+  - [ ] Make note for this ^
+
+```
+ /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/
+```

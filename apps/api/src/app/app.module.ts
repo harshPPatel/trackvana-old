@@ -5,13 +5,12 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './database/databse.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { UsersService } from './users/users.service';
-import { AppConstants } from './app.constants';
+import { ArgonService } from './utils/argon/argon.service';
 
 @Module({
   imports: [DatabaseModule, AuthModule, UsersModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ArgonService],
 })
 export class AppModule implements OnModuleInit {
   constructor(private readonly appService: AppService) {}
