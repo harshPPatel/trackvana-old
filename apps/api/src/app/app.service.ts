@@ -14,6 +14,10 @@ export class AppService {
     private readonly argonService: ArgonService
   ) {}
 
+  async getData() {
+    return 'Welcome to api!';
+  }
+
   async createAdminAccountIfDoesNotExists(): Promise<void> {
     const adminUser = await this.usersService.findOneByEmail(
       AppConstants.ADMIN_EMAIL

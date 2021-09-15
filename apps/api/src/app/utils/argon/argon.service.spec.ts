@@ -15,4 +15,10 @@ describe('ArgonService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should create same hash for same strings', async () => {
+    const hashA = service.hash('test');
+    const hashB = service.hash('test');
+    expect(hashA).toEqual(hashB);
+  });
 });
