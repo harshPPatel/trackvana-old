@@ -14,11 +14,7 @@ export class AppService {
     private readonly argonService: ArgonService
   ) {}
 
-  async getData() {
-    return 'Welcome to api!';
-  }
-
-  async createAdminAccountIfDoesNotExists(): Promise<void> {
+  async createAdminAccountIfDoesNotExists(): Promise<User> {
     const adminUser = await this.usersService.findOneByEmail(
       AppConstants.ADMIN_EMAIL
     );
@@ -27,7 +23,7 @@ export class AppService {
       Logger.log(
         'Admin account already exists. Skipping Admin Account Creation porcess.'
       );
-      return;
+      return null;
     }
 
     // Better name for this variable?
@@ -44,12 +40,9 @@ export class AppService {
     newAdminUser.image = 'https://www.google.com';
     newAdminUser.gender = UserGenders.MALE;
 
-    console.log(newAdminUser);
-
     const dbUser = await this.usersService.create(newAdminUser);
+    Logger.log('Successfully created default Admin account!');
 
-    if (dbUser) {
-      Logger.log('Successfully created default Admin account!');
-    }
+    return dbUser;
   }
 }
