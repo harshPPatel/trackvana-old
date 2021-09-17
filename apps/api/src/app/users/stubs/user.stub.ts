@@ -3,7 +3,7 @@ import { User } from '../entities/user.entity';
 import { UserGenders } from '../enums/user-gender.enum';
 
 export class UserStub {
-  public static getStub(email: string = AppConstants.ADMIN_EMAIL): User {
+  public static getStub(email: string): User {
     return {
       id: 'uuid',
       firstName: 'John',

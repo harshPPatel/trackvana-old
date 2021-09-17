@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserPasswordService } from './user-password.service';
-import { UserConstants } from './users.constants';
+import { UserPasswordService } from '../user-password.service';
+import { UserConstants } from '../users.constants';
 
 describe('UserPasswordService', () => {
   let service: UserPasswordService;

@@ -1,12 +1,12 @@
 import { Test } from '@nestjs/testing';
-import { AppConstants } from './app.constants';
+import { AppConstants } from '../app.constants';
 
-import { AppService } from './app.service';
-import { User } from './users/entities/user.entity';
-import { UserGenders } from './users/enums/user-gender.enum';
-import { UserPasswordService } from './users/user-password.service';
-import { UsersService } from './users/users.service';
-import { ArgonService } from './utils/argon/argon.service';
+import { AppService } from '../app.service';
+import { User } from '../users/entities/user.entity';
+import { UserGenders } from '../users/enums/user-gender.enum';
+import { UserPasswordService } from '../users/user-password.service';
+import { UsersService } from '../users/users.service';
+import { ArgonService } from '../utils/argon/argon.service';
 
 const getMockAdminUser = () =>
   ({
