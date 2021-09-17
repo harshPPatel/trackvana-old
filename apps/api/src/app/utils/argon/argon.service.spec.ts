@@ -3,6 +3,7 @@ import { ArgonService } from './argon.service';
 
 describe('ArgonService', () => {
   let service: ArgonService;
+  const testString = 'thisisateststring';
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -17,8 +18,7 @@ describe('ArgonService', () => {
   });
 
   it('should create same hash for same strings', async () => {
-    const hashA = service.hash('test');
-    const hashB = service.hash('test');
-    expect(hashA).toEqual(hashB);
+    const hashedTestString = await service.hash(testString);
+    expect(hashedTestString).toEqual(expect.any(String));
   });
 });
