@@ -1,6 +1,6 @@
 - [x] App Controller
 - [x] App Service
-- [ ] User service
+- [x] User service
 - [ ] UserPassword service
 - [ ] UserPassword service
 - [ ] Argon service

@@ -7,6 +7,9 @@ export class UserPasswordService {
 
   public generateRandomPassword(passwordLength: number): string {
     let password = '';
+    if (passwordLength < 8) {
+      throw new Error("Password's length atleast should be 8 characters.");
+    }
     for (let index = 0; index < passwordLength; index++) {
       const randomIndex = Math.floor(Math.random() * this.characterSet.length);
       password += this.characterSet.charAt(randomIndex);
