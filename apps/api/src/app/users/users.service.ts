@@ -14,6 +14,7 @@ export class UsersService {
     return await this.usersRepository.findOne({ email });
   }
 
+  // TODO: Will be changed to UserDTO in future, update the test code if needed
   async create(newUser: User): Promise<User> {
     return await this.usersRepository.save(newUser);
   }
