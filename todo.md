@@ -1,5 +1,16 @@
 ## Auth
 
+- [ ] Admin User
+
+  - [ ] Add Email Service (seperate domain, works via events only?)
+    - [ ] Tests
+    - [ ] Update app service test to check if the email service was called? or event service?
+  - [ ] Add dicebear service
+    - [ ] Create utility class which wraps this third party library
+    - [ ] Service calls this utility
+    - [ ] Write tests
+    - [ ] Update app service tests to test if image is valid svg???
+
 - [ ] User
 
   - [ ] use https://avatars.dicebear.com/docs/installation package to create avatar for the user

@@ -1,7 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { EventEmitter2 } from 'eventemitter2';
 import { AppConstants } from './app.constants';
 import { User } from './users/entities/user.entity';
 import { UserGenders } from './users/enums/user-gender.enum';
+import { UserCreatedEvent } from './users/events/user-created.event';
 import { UserPasswordService } from './users/user-password.service';
 import { UsersService } from './users/users.service';
 import { ArgonService } from './utils/argon/argon.service';
@@ -11,7 +13,8 @@ export class AppService {
   constructor(
     private readonly usersService: UsersService,
     private readonly userPasswordService: UserPasswordService,
-    private readonly argonService: ArgonService
+    private readonly argonService: ArgonService,
+    private readonly eventEmitter: EventEmitter2
   ) {}
 
   async createAdminAccountIfDoesNotExists(): Promise<User> {
@@ -42,6 +45,12 @@ export class AppService {
 
     const dbUser = await this.usersService.create(newAdminUser);
     Logger.log('Successfully created default Admin account!');
+
+    const userCreatedEvent = new UserCreatedEvent();
+    userCreatedEvent.firstName = newAdminUser.firstName;
+    userCreatedEvent.email = newAdminUser.email;
+    userCreatedEvent.temporaryPassword = password;
+    this.eventEmitter.emit('user.created', userCreatedEvent);
 
     return dbUser;
   }

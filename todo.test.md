@@ -2,4 +2,4 @@
 - [x] App Service
 - [x] User service
 - [x] UserPassword service
-- [ ] Argon service
+- [x] Argon service
