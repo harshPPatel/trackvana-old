@@ -10,6 +10,6 @@ export class UserCreatedListener {
   // TODO: move these event names somewhere else?
   @OnEvent('user.created')
   async handleUserCreatedEvent(payload: UserCreatedEvent) {
-    await this.mailService.sendWelcomEmail(payload);
+    await this.mailService.sendWelcomeEmail(payload);
   }
 }

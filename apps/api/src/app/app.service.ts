@@ -7,6 +7,7 @@ import { UserCreatedEvent } from './users/events/user-created.event';
 import { UserPasswordService } from './users/user-password.service';
 import { UsersService } from './users/users.service';
 import { ArgonService } from './utils/argon/argon.service';
+import { DicebearService } from './utils/dicebear/dicebear.service';
 
 @Injectable()
 export class AppService {
@@ -14,7 +15,8 @@ export class AppService {
     private readonly usersService: UsersService,
     private readonly userPasswordService: UserPasswordService,
     private readonly argonService: ArgonService,
-    private readonly eventEmitter: EventEmitter2
+    private readonly eventEmitter: EventEmitter2,
+    private readonly dicebearService: DicebearService
   ) {}
 
   async createAdminAccountIfDoesNotExists(): Promise<User> {
@@ -40,8 +42,8 @@ export class AppService {
     // TODO: send email to the admin user
     newAdminUser.password = hashedPassword;
     newAdminUser.isAdmin = true;
-    newAdminUser.image = 'https://www.google.com';
     newAdminUser.gender = UserGenders.MALE;
+    newAdminUser.image = this.dicebearService.generateAvatarSVG(newAdminUser);
 
     const dbUser = await this.usersService.create(newAdminUser);
     Logger.log('Successfully created default Admin account!');

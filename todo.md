@@ -2,7 +2,7 @@
 
 - [ ] Admin User
 
-  - [ ] Add Email Service (seperate domain, works via events only?)
+  - [x] Add Email Service (seperate domain, works via events only?)
     - [ ] Tests
     - [ ] Update app service test to check if the email service was called? or event service?
   - [ ] Add dicebear service
@@ -31,3 +31,13 @@
 ```
  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/
 ```
+
+## Track
+
+- TV Shows
+- Movies
+- Anime
+- Documentries
+- YouTube Shows
+- Podcasts
+- Books?

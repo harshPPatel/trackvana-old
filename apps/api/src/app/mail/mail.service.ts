@@ -12,7 +12,7 @@ export class MailService {
     // });
   }
 
-  async sendWelcomEmail(userCreatedEvent: UserCreatedEvent) {
+  async sendWelcomeEmail(userCreatedEvent: UserCreatedEvent) {
     Logger.log(`Sending Welcome Email to: ${userCreatedEvent.email}`);
     await this.mailerService.sendMail({
       to: userCreatedEvent.email,

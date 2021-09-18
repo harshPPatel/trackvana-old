@@ -13,6 +13,8 @@ import { UsersModule } from './users/users.module';
 import { ArgonService } from './utils/argon/argon.service';
 import { MailModule } from './mail/mail.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
+import { DicebearService } from './utils/dicebear/dicebear.service';
+import { UserStub } from './users/stubs/user.stub';
 
 // TODO: Move Argon Service to Core Module?? (only if we have more than Argon service as a global service)
 @Module({
@@ -24,7 +26,7 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
     MailModule,
   ],
   controllers: [AppController],
-  providers: [AppService, ArgonService],
+  providers: [AppService, ArgonService, DicebearService],
 })
 export class AppModule implements OnApplicationBootstrap {
   constructor(private readonly appService: AppService) {}
