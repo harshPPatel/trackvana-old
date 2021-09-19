@@ -8,7 +8,6 @@ import { UserGenders } from '../../users/enums/user-gender.enum';
 @Injectable()
 export class DicebearService {
   generateAvatarSVG(user: User): string {
-    // user.gender = UserGenders.FEMALE;
     const seed = user.id + user.email;
     const options =
       user.gender === UserGenders.MALE
