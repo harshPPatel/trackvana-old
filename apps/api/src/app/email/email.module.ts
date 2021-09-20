@@ -3,9 +3,9 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
 import { Module } from '@nestjs/common';
 import { join } from 'path';
 
-import { MailService } from './mail.service';
-import { MailController } from './mail.controller';
+import { EmailService } from './email.service';
 
+// TODO: Rename to Email Module and Email Service
 @Module({
   imports: [
     MailerModule.forRoot({
@@ -21,7 +21,7 @@ import { MailController } from './mail.controller';
         from: '"Trackvana" <trackvana@harshpatel.info>',
       },
       template: {
-        dir: join(__dirname, 'app/mail/templates'),
+        dir: join(__dirname, 'app/email/templates'),
         adapter: new HandlebarsAdapter(),
         options: {
           strict: true,
@@ -29,8 +29,8 @@ import { MailController } from './mail.controller';
       },
     }),
   ],
-  providers: [MailService],
-  controllers: [MailController],
-  exports: [MailService],
+  providers: [EmailService],
+  controllers: [],
+  exports: [EmailService],
 })
-export class MailModule {}
+export class EmailModule {}

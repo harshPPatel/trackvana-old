@@ -11,7 +11,7 @@ import { DatabaseModule } from './database/databse.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ArgonService } from './utils/argon/argon.service';
-import { MailModule } from './mail/mail.module';
+import { EmailModule } from './email/email.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { DicebearService } from './utils/dicebear/dicebear.service';
 import { UserStub } from './users/stubs/user.stub';
@@ -23,7 +23,7 @@ import { UserStub } from './users/stubs/user.stub';
     DatabaseModule,
     AuthModule,
     UsersModule,
-    MailModule,
+    EmailModule,
   ],
   controllers: [AppController],
   providers: [AppService, ArgonService, DicebearService],

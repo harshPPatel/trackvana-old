@@ -6,7 +6,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "test:watch": "nx test --watch"
+    "test:watch": "nx test --watch",
+    "test:coverage": "nx test --codeCoverage"
   },
   "private": true,
   "dependencies": {

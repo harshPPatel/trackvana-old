@@ -5,6 +5,8 @@ import { createAvatar, Options } from '@dicebear/avatars';
 import { User } from '../../users/entities/user.entity';
 import { UserGenders } from '../../users/enums/user-gender.enum';
 
+// TODO: Rename to AvatarService and move it under User Folder
+// TODO: Wrap dicebear to another class and call that in this service
 @Injectable()
 export class DicebearService {
   generateAvatarSVG(user: User): string {

@@ -3,14 +3,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import { UserCreatedEvent } from '../users/events/user-created.event';
 
 @Injectable()
-export class MailService {
-  constructor(private readonly mailerService: MailerService) {
-    // this.mailerService.sendMail({
-    //   to: 'me@codingwith.fun',
-    //   subject: 'Test email from trackvana',
-    //   template: './test',
-    // });
-  }
+export class EmailService {
+  constructor(private readonly mailerService: MailerService) {}
 
   async sendWelcomeEmail(userCreatedEvent: UserCreatedEvent) {
     Logger.log(`Sending Welcome Email to: ${userCreatedEvent.email}`);
