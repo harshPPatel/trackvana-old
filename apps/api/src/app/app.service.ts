@@ -32,14 +32,13 @@ export class AppService {
     }
 
     // Better name for this variable?
-    const password = this.userPasswordService.generateRandomPassword(24);
+    const password = this.userPasswordService.createPassword(24);
     const hashedPassword = await this.argonService.hash(password);
 
     const newAdminUser = new User();
     newAdminUser.firstName = 'Admin';
     newAdminUser.lastName = 'Admin';
     newAdminUser.email = AppConstants.ADMIN_EMAIL;
-    // TODO: send email to the admin user
     newAdminUser.password = hashedPassword;
     newAdminUser.isAdmin = true;
     newAdminUser.gender = UserGenders.MALE;

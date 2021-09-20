@@ -19,17 +19,17 @@ describe('UserPasswordService', () => {
 
   describe('generateRandomPassword', () => {
     it('should throw error', () => {
-      expect(() => service.generateRandomPassword(0)).toThrowError(
+      expect(() => service.createPassword(0)).toThrowError(
         "Password's length atleast should be 8 characters."
       );
-      expect(() => service.generateRandomPassword(-5)).toThrowError(
+      expect(() => service.createPassword(-5)).toThrowError(
         "Password's length atleast should be 8 characters."
       );
     });
 
     it('should generate random password', () => {
       const passwordLength = 8;
-      const generatedPassword = service.generateRandomPassword(passwordLength);
+      const generatedPassword = service.createPassword(passwordLength);
       expect(generatedPassword).toHaveLength(passwordLength);
       expect(generatedPassword).toMatch(UserConstants.PASSWORD_REGEX);
     });

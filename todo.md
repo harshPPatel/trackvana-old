@@ -32,6 +32,9 @@
  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/
 ```
 
+- [ ] Tests for Constants files (test all the variables that uses process.env)
+  - https://stackoverflow.com/questions/48033841/test-process-env-with-jest
+
 ## Track
 
 - TV Shows
