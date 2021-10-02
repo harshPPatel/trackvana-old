@@ -8,4 +8,8 @@ export class ArgonService {
   async hash(text: string): Promise<string> {
     return await argon.hash(text);
   }
+
+  async verify(hashedText: string, plainText: string) {
+    return await argon.verify(hashedText, plainText);
+  }
 }

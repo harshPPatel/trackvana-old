@@ -14,7 +14,7 @@ import { EmailService } from './email.service';
 
         auth: {
           user: 'harshppatel2880@gmail.com',
-          pass: 'clejdabjlhdezsmp',
+          pass: 'superfakepasswordlol',
         },
       },
       defaults: {
