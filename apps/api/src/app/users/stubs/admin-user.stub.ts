@@ -14,6 +14,8 @@ export class AdminUserStub {
       image: 'https://www.google.com',
       gender: UserGenders.MALE,
       isDisabled: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
   }
 }

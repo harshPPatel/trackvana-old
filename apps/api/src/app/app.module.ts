@@ -15,6 +15,7 @@ import { EmailModule } from './email/email.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { DicebearService } from './utils/dicebear/dicebear.service';
 import { UserStub } from './users/stubs/user.stub';
+import { MoviesModule } from './movies/movies.module';
 
 // TODO: Move Argon Service to Core Module?? (only if we have more than Argon service as a global service)
 @Module({
@@ -24,6 +25,7 @@ import { UserStub } from './users/stubs/user.stub';
     AuthModule,
     UsersModule,
     EmailModule,
+    MoviesModule,
   ],
   controllers: [AppController],
   providers: [AppService, ArgonService, DicebearService],

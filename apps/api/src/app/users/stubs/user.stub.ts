@@ -1,4 +1,3 @@
-import { AppConstants } from '../../app.constants';
 import { User } from '../entities/user.entity';
 import { UserGenders } from '../enums/user-gender.enum';
 
@@ -14,6 +13,8 @@ export class UserStub {
       image: 'https://www.google.com',
       gender: UserGenders.MALE,
       isDisabled: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
   }
 }
